@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Divine Dazzle - Premium Cosmetics</title>
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Replace black background with a background image */
+            background: url('background-img.jpg') center center fixed;
+            background-size: cover;
+            color: black;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            color: #ff4081;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #d30060;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #ff4081;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .product-list {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .product-card {
+                padding: 10px;
+            }
+
+            .product-title {
+                font-size: 14px;
+            }
+
+            .product-price {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .cart-icon {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="text-2xl font-bold"><a href="https://www.flaticon.com/free-icons/makeup" title="makeup icons">🌟 Divine Dazzle</a></h1>
+        <p>Discover the magic of beauty with our premium cosmetics</p>
+    </header>
+
+    <div class="container">
+        <div class="product-list">
+            <!-- Product Cards -->
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img class="product-image" src="cosmetics-img.jpeg" alt="lip product">
+                <div class="product-title">LIP STICK</div>
+                <div class="product-price">$150/-</div>
+                <button class="cta-button" onclick="addToCart('LIP STICK', '$150')">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img class="product-image" src="cosmetics2-img.jpeg" alt="face product">
+                <div class="product-title">COMPACT POWDER</div>
+                <div class="product-price">$250/-</div>
+                <button class="cta-button" onclick="addToCart('COMPACT POWDER', '$250/-')">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img class="product-image" src="maskara.jpeg" alt="maskara">
+                <div class="product-title">MASKARA</div>
+                <div class="product-price">$220/-</div>
+                <button class="cta-button" onclick="addToCart('MASKARA', '$220/-')">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img class="product-image" src="lip-balm.jpeg" alt="lip-balm">
+                <div class="product-title">LIP BALM</div>
+                <div class="product-price">$100/-</div>
+                <button class="cta-button" onclick="addToCart('LIP BALM', '$100/-')">Add to Cart</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img class="product-image" src="kajal-img.jpeg" alt="kajal-img.jpeg">
+                <div class="product-title">KAJAL</div>
+                <div class="product-price">$150/-</div>
+                <button class="cta-button" onclick="addToCart('KAJAL', '$150/-')">Add to Cart</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img class="product-image" src="moisturizer-img.jpeg" alt="moisturizer">
+                <div class="product-title">MOISTURIZER</div>
+                <div class="product-price">$270/-</div>
+                <button class="cta-button" onclick="addToCart('MOISTURIZER', '$270/-')">Add to Cart</button>
+            </div>
+
+
+             <div class="product-card">
+                <img class="product-image" src="highlighter-img.jpeg" alt="highlighter">
+                <div class="product-title">HIGHLIGHTER</div>
+                <div class="product-price">$300/-</div>
+                <button class="cta-button" onclick="addToCart('HIGHLIGHTER', '$300/-')">Add to Cart</button>
+            </div>
+
+             <div class="product-card">
+                <img class="product-image" src="body-lotion.jpeg" alt="lotion">
+                <div class="product-title">BODY LOTION</div>
+                <div class="product-price">$140/-</div>
+                <button class="cta-button" onclick="addToCart('BODY LOTION', '$140/-')">Add to Cart</button>
+            </div>
+
+             <div class="product-card">
+                <img class="product-image" src="hair-serum.jpeg" alt="hair serum">
+                <div class="product-title">HAIR SERUM</div>
+                <div class="product-price">$90/-</div>
+                <button class="cta-button" onclick="addToCart('HAIR SERUM', '$90/-')">Add to Cart</button>
+            </div>
+
+            <!-- Add more product cards as needed -->
+        </div>
+    </div>
+
+    <!-- Shopping Cart Icon -->
+    <div class="cart-icon" onclick="openCartPage()">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal">
+        <div class="cart-modal-content">
+            <h2>Your Shopping Cart</h2>
+            <ul id="cartItems"></ul>
+            <button onclick="closeCartModal()">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Divine Dazzle. All rights reserved.
+    </footer>
+
+    <script>
+        // Define JavaScript functions here
+        let cartItems = [];
+
+        // Function to add item to the cart
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            updateCartCount();
+        }
+
+        // Function to update the cart count
+        function updateCartCount() {
+            const cartCountElement = document.getElementById('cartCount');
+            cartCountElement.textContent = cartItems.length;
+        }
+
+        // Function to open the cart modal
+        function openCartPage() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.style.display = 'block';
+            // Add code to display cart items in the modal
+        }
+
+        // Function to close the cart modal
+        function closeCartModal() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
